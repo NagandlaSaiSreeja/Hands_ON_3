@@ -7,7 +7,7 @@ def merge_sort(my_array):
     middle = length // 2  
     left = merge_sort(my_array[:middle]) 
     right = merge_sort(my_array[middle:])  
-    # Merge the two sorted halves
+    
     return merge(left, right)
 
 
