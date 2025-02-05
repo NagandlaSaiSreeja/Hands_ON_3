@@ -24,7 +24,7 @@ polynomial_model = np.poly1d(polynomial_coeffs)
 
 
 residuals = np.array(timing_results) - polynomial_model(size_values)
-threshold = np.mean(residuals) + 2 * np.std(residuals)  # Outlier detection threshold
+threshold = np.mean(residuals) + 2 * np.std(residuals)  
 
 
 n_0_candidates = [size_values[i] for i in range(len(size_values)) if abs(residuals[i]) > threshold]
