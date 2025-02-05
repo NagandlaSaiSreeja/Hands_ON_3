@@ -26,8 +26,8 @@ def merge(left, right):
             right_half += 1
 
 
-    merged.extend(left[left_half:])  # Append remaining elements in left
-    merged.extend(right[right_half:])  # Append remaining elements in right
+    merged.extend(left[left_half:])  
+    merged.extend(right[right_half:])  
 
     return merged
 
