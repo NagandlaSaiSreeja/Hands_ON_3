@@ -4,18 +4,17 @@ def merge_sort(my_array):
         return my_array
 
 
-    middle = length // 2  # Use integer division
-    left = merge_sort(my_array[:middle])  # Recursively sort the left half
-    right = merge_sort(my_array[middle:])  # Recursively sort the right half
-
+    middle = length // 2  
+    left = merge_sort(my_array[:middle]) 
+    right = merge_sort(my_array[middle:])  
     # Merge the two sorted halves
     return merge(left, right)
 
 
 def merge(left, right):
-    left_half = 0  # Pointer for the left half
-    right_half = 0  # Pointer for the right half
-    merged = []  # This will store the sorted list
+    left_half = 0  
+    right_half = 0  
+    merged = []  
 
 
     while left_half < len(left) and right_half < len(right):
