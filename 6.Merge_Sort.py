@@ -6,23 +6,25 @@ def merge_sort(arr):
 
    
 
-  mid = len(arr) // 2 
+  mid = len(arr) // 2 #To find the middle index
 
-  left_half = arr[:mid] 
+  left_half = arr[:mid] #Split from left half
 
-  right_half = arr[mid:] 
-
-
-
-  merge_sort(left_half) 
-
-  merge_sort(right_half) 
+  right_half = arr[mid:] #Split from right half
 
 
 
-  i = j = k = 0 
+  merge_sort(left_half) #Recursively sort from left half
+
+  merge_sort(right_half) #Recursively sort from right half
+
+
+
+  i = j = k = 0 #Pointers for left,right and merged arrays
 
    
+
+ #Merge the two halves
 
   while i < len(left_half) and j < len(right_half):
 
@@ -42,7 +44,7 @@ def merge_sort(arr):
 
 
 
-  
+  #Copy remaining elements from left half
 
   while i < len(left_half):
 
@@ -54,7 +56,7 @@ def merge_sort(arr):
 
 
 
-  
+  #Copy remaining elements from right half
 
   while j < len(right_half):
 
@@ -68,6 +70,11 @@ def merge_sort(arr):
 
 def test_merge_sort():
 
+  """
+
+  Tests the merge_sort function with a sample array.
+
+  """
 
   arr = [5, 2, 4, 7, 1, 3, 2, 6]
 
