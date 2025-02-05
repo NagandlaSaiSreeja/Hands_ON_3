@@ -54,7 +54,7 @@ def merge_sort(arr):
 
 
 
-  #Copy remaining elements from right half
+  
 
   while j < len(right_half):
 
@@ -79,6 +79,6 @@ def test_merge_sort():
 
 
 
-if _name_ == "_main_":
+if __name__ == "__main__":
 
   test_merge_sort()
