@@ -41,7 +41,7 @@ for n_0 in n_0_candidates:
 
 plt.xlabel('Size of (n)')
 plt.ylabel('Execution Time (seconds)')
-plt.title('Execution Time vs Input Size for f(n)')
+plt.title('Zoomed-In Execution Time vs Input Size for f(n)')
 plt.legend()
 plt.grid(True)
 plt.show()
