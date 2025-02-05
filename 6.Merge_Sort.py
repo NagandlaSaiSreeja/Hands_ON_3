@@ -1,46 +1,84 @@
-def merge_sort(my_array):
-    length = len(my_array)
-    if length <= 1:
-        return my_array
+def merge_sort(arr):
 
+  if len(arr) <= 1:
 
-    middle = length // 2  
-    left = merge_sort(my_array[:middle]) 
-    right = merge_sort(my_array[middle:])  
-    
-    return merge(left, right)
+    return
 
+   
 
-def merge(left, right):
-    left_half = 0  
-    right_half = 0  
-    merged = []  
+  mid = len(arr) // 2 
 
+  left_half = arr[:mid] 
 
-    while left_half < len(left) and right_half < len(right):
-        if left[left_half] <= right[right_half]:
-            merged.append(left[left_half])
-            left_half += 1
-        else:
-            merged.append(right[right_half])
-            right_half += 1
-
-
-    merged.extend(left[left_half:])  
-    merged.extend(right[right_half:])  
-
-    return merged
+  right_half = arr[mid:] 
 
 
 
-my_array= [5, 2, 4, 7, 1, 3, 2, 6]
+  merge_sort(left_half) 
 
-print("Given array is:")
-for num in my_array:
-    print(f"{num}", end=" ")
+  merge_sort(right_half) 
 
 
-sorted_array = merge_sort(my_array)
-print("\n\nSorted array is:")
-for num in sorted_array:
-    print(f"{num}",end=" ")
+
+  i = j = k = 0 
+
+   
+
+  while i < len(left_half) and j < len(right_half):
+
+    if left_half[i] < right_half[j]:
+
+      arr[k] = left_half[i]
+
+      i += 1
+
+    else:
+
+      arr[k] = right_half[j]
+
+      j += 1
+
+    k += 1
+
+
+
+  
+
+  while i < len(left_half):
+
+    arr[k] = left_half[i]
+
+    i += 1
+
+    k += 1
+
+
+
+  #Copy remaining elements from right half
+
+  while j < len(right_half):
+
+    arr[k] = right_half[j]
+
+    j += 1
+
+    k += 1
+
+
+
+def test_merge_sort():
+
+
+  arr = [5, 2, 4, 7, 1, 3, 2, 6]
+
+  print("Original array:", arr)
+
+  merge_sort(arr)
+
+  print("Sorted array:", arr)
+
+
+
+if _name_ == "_main_":
+
+  test_merge_sort()
